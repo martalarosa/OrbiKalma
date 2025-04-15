@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "OrbiKalma", "OrbiKalma.pyproj", "{06B22A84-AEAD-4B4A-9A3D-E85C1A136B37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06B22A84-AEAD-4B4A-9A3D-E85C1A136B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B22A84-AEAD-4B4A-9A3D-E85C1A136B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9D1E274-45DC-4180-9FD0-1EA0ADABB5CA}
+	EndGlobalSection
+EndGlobal
