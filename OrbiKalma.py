@@ -38,6 +38,14 @@ def ecef_to_geodetic(X, Y, Z):  # перевод координат из ECEF в
         lat = math.atan2(Z, p * (1 - e2 * N / (N + h))) 
     return math.degrees(lat), math.degrees(lon), h  
 
+def compute_elevation(receiver_pos, sat_pos): #расчёт угла возвышения над горизонтом
+    vec = sat_pos - receiver_pos
+    vec_norm = vec / np.linalg.norm(vec)
+    zenith = receiver_pos / np.linalg.norm(receiver_pos)
+    cos_el = np.dot(vec_norm, zenith)
+    el = np.arcsin(cos_el)
+    return np.degrees(el)
+
 # чтение RINEX-файла
 def parse_all_satellites(file_path):  # парсинг эфемерид по спутникам
     with open(file_path, 'r', encoding='latin-1') as file:
@@ -148,7 +156,7 @@ if __name__ == '__main__':
         pos = orbit[0] 
         vector = pos - receiver_position  # вектор спутник-приёмник
         distance = np.linalg.norm(vector)  # расстояние
-        angle = np.degrees(np.arccos(np.dot(receiver_position, vector) / (np.linalg.norm(receiver_position) * distance)))  # угол над горизонтом
+        angle = compute_elevation(receiver_position, pos) #угол возвышения над горизонтом
 
         if angle < 15:
             color = 'black'
